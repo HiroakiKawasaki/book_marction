@@ -22,3 +22,67 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# テーブル設計
+
+## users テーブル
+
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| nickname         | string  | null: false |
+| email            | string  | null: false |
+| password         | string  | null: false |
+| family_name      | string  | null: false |
+| first_name       | string  | null: false |
+| family_name_kana | string  | null: false |
+| first_name_kana  | string  | null: false |
+| birthday         | string  | null: false |
+| sex              | string  | null: false |
+
+### Association
+
+- has_many :books
+- has_many :comments
+
+## books テーブル
+
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| title       | string     | null: false                    |
+| genre_id    | integer    | null: false                    |
+| explanation | text       | null: false                    |
+| user        | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :users
+- has_one :plans
+- has_many :comments
+
+## plans テーブル
+
+| Column         | Type    | Options     |
+| -------------- | ------- | ----------- |
+| when           | string  |             |
+| where          | string  |             |
+| whom           | string  |             |
+| what           | string  |             |
+| how            | string  | null: false |
+| achievement_id | integer |             |
+
+### Association
+
+- belongs_to :books
+
+## comments テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| text   | text       | null: false                    |
+| user   | references | null: false, foreign_key :true |
+| book   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :users
+- belongs_to :books
