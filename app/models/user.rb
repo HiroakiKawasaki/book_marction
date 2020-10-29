@@ -1,6 +1,8 @@
 class User < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :books
   has_many :comments
+  belongs_to_active_hash :sex
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
