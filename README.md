@@ -64,11 +64,11 @@ Things you may want to cover:
 | Column         | Type    | Options     |
 | -------------- | ------- | ----------- |
 | reason         | string  | null: false |
-| when           | string  |             |
-| where          | string  |             |
-| whom           | string  |             |
-| what           | string  | null: false |
-| how            | string  | null: false |
+| time           | string  |             |
+| place          | string  |             |
+| partner        | string  |             |
+| thing          | string  | null: false |
+| todo           | string  | null: false |
 | achievement_id | integer |             |
 
 ### Association

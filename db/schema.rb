@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 2020_10_30_032251) do
 
   create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "reason", null: false
-    t.string "when"
-    t.string "where"
-    t.string "whom"
-    t.string "what", null: false
-    t.string "how", null: false
+    t.string "tine"
+    t.string "place"
+    t.string "partner"
+    t.string "thing", null: false
+    t.string "todo", null: false
     t.integer "acievement_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

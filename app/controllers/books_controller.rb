@@ -20,5 +20,5 @@ end
 private
 
 def book_plan_params
-  params.require(:book_plan).permit(:title, :genre_id, :explanation, :user_id, :reason, :when, :where, :whom, :what, :how, :achievement_id)
+  params.require(:book_plan).permit(:title, :genre_id, :explanation, :user_id, :reason, :time, :place, :partner, :thing, :todo, :achievement_id)
  end
