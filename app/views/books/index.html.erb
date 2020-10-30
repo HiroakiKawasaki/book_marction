@@ -1,8 +1,9 @@
 <%= render "shared/header" %>
-<div class='title-contents'>
-    <h2 class='service-title'>
-      「読み終えた本」を「生活の一部に」
-    </h2>
+<div class='main'>
+  <div class='title-contents'>
+    <h1 class='service-title'>
+        「読み終えた本」を「生活の一部に」
+    </h1>
     <p class='service-explain'>
       Book Marctionはだれでもかんたんにご利用できる
     </p>
@@ -10,4 +11,36 @@
       読んだ本を記録するアプリです
     </p>
   </div>
+
+  <div class='book-contents'>
+    <h1 class='title'>ピックアップカテゴリー</h1>
+    <%= link_to '読み終えた本', "#", class: "subtitle" %>
+    <ul class='book-lists'>
+    <%# @books.each do |book|%>
+      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <li class='list'>
+        <%# link_to item_path(item.id) do %>
+          <div class='book-info'>
+            <h2 class='item-name'>
+              <%# book.name %>
+            </h2>
+            <div class='book-genre'>
+              <%# book.genre_id %>
+            </div>
+          </div>
+        <%# end%>
+      </li>
+    <%# end%>
+
+    <%# 商品がない場合のダミー %>
+      <%# if @books = nil%>
+      <li class='list'>
+        <h3 class='book-name'>
+          みんなで読書しよう！
+        </h3>        
+      </li>
+      <%# /商品がない場合のダミー %>
+    </ul>
+  </div>
+</div>
 <%= render "shared/footer" %>
