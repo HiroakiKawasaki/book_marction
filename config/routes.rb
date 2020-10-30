@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root to: 'books#index'
 
   resources :users
+  resources :books do
+    resources :plans
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

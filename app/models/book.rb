@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   belongs_to :users
   has_one :plans
   has_many :comments
