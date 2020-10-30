@@ -1,0 +1,27 @@
+<div class="books-post-main">
+  <h2 class="books-post-title">商品の情報を入力</h2>
+  <%= form_with model: @book, local: true do |f| %>
+
+  <%# render 'shared/error_messages', url: books_path, model: f.object %>
+
+  <div class="new-books">
+    <div class="weight-bold-text">
+      タイトル名
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :title, class:"books-text", id:"book-title", placeholder:"本のタイトル"%>
+    <div class="weight-bold-text">
+      本のジャンル
+        <span class="indispensable">必須</span>
+    </div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
+    <div class="books-explain">
+      <div class="weight-bold-text">
+        読んだ本の内容・感想
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :explanation, class:"books-text", id:"book-info", placeholder:"本の内容や感想を自由にお書きください（必須）"%>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -15,6 +15,6 @@ class BookPlan
 
   def save
     book = Book.create(title: title, genre_id: genre_id, explanation: explanation, user_id: user_id)
-    Delivery.create(reason: reason, time: time, place: place, partner: partner, thing: thing, todo: todo, achievement_id: achievement_id,book_id: book.id)
+    Delivery.create(reason: reason, time: time, place: place, partner: partner, thing: thing, todo: todo, achievement_id: achievement_id, book_id: book.id)
   end
 end
