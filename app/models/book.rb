@@ -2,6 +2,7 @@ class Book < ApplicationRecord
   belongs_to :users
   has_one :plans
   has_many :comments
+  belongs_to_active_hash :genre
 
   with_options presence: true do
     validates :tytle
