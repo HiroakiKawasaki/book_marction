@@ -1,6 +1,6 @@
 <div class="books-post-main">
   <h2 class="books-post-title">商品の情報を入力</h2>
-  <%= form_with model: @book, local: true do |f| %>
+  <%= form_with url: books_path, local: true do |f| %>
 
   <%# render 'shared/error_messages', url: books_path, model: f.object %>
 
@@ -23,5 +23,58 @@
       <%= f.text_area :explanation, class:"books-text", id:"book-info", placeholder:"本の内容や感想を自由にお書きください（必須）"%>
     </div>
   </div>
+
+  <div class="action-plan-list">
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">本を読んで、実行してみたい"こと"についてご記入ください。</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :thing, class:"input-default", id:"postal-code", placeholder:"例）朝は早起きをする。"%>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">実行してみたいことを"どのように"行いますか？自由にアクションプランをお書きください。</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :todo, class:"input-default", id:"postal-code", placeholder:"例）目が覚めたらカーテンを開ける。友人と朝活を行う。"%>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">なぜそのように"行動したい！"と思いましたか？</label>
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :reason, class:"input-default", id:"postal-code", placeholder:"例）会社で眠気を強く感じているから。"%>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">アクションプランは"いつ"行いますか？</label>
+      </div>
+      <%= f.text_field :time, class:"input-default", id:"postal-code", placeholder:"例）毎朝・休日も継続する。"%>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">アクションプランは"どこで"行いますか？</label>
+      </div>
+      <%= f.text_field :place, class:"input-default", id:"postal-code", placeholder:"例）自分の部屋、近所のカフェ等"%>
+    </div>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">アクションプランは"誰と"行いますか？</label>
+      </div>
+      <%= f.text_field :partner, class:"input-default", id:"postal-code", placeholder:"例）友人"%>
+    </div>
+
+    <div class="form-group">
+      <div class='formtext-wrap'>
+        <label class="form-text">アクションプランの進捗はいかがですか？</label>
+      </div>
+      <%= f.collection_select(:achivement_id, Achivement.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+  </div>
+  <div class="pass-btn-contents">
+    <%= f.submit "投稿する" , class:"pass-btn" %>
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
   <% end %>
 </div>
+

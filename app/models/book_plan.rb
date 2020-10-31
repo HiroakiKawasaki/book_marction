@@ -3,12 +3,12 @@ class BookPlan
   attr_accessor :title, :genre_id, :explanation, :user_id, :reason, :time, :place, :partner, :thing, :todo, :achievement_id
 
   with_options presence: true do
-    validates :tytle
+    validates :title
     validates :genre_id
     validates :explanation
     validates :reason
-    validates :what
-    validates :how
+    validates :thing
+    validates :todo
   end
 
   validates :genre_id, numericality: { greater_than: 0 }
