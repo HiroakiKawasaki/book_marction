@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_30_032251) do
+ActiveRecord::Schema.define(version: 2020_11_02_032701) do
+
+  create_table "achievements", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
@@ -24,12 +29,12 @@ ActiveRecord::Schema.define(version: 2020_10_30_032251) do
 
   create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "reason", null: false
-    t.string "tine"
+    t.string "time"
     t.string "place"
     t.string "partner"
     t.string "thing", null: false
     t.string "todo", null: false
-    t.integer "acievement_id"
+    t.integer "achievement_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :achivement do
+  factory :achievement do
     
   end
 end

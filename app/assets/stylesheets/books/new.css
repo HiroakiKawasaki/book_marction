@@ -1,0 +1,32 @@
+.books-post-main{
+  background-color: #f5f5f5;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.books-post-title{
+  justify-content: center;
+}
+
+/* 投稿した本の説明 */
+.new-books{
+  padding: 2vh;
+}
+
+.genre-select-box {
+  width: 200px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  justify-content: center;
+}  
+
+/* /投稿した本の説明 */

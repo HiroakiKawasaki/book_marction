@@ -1,30 +1,42 @@
 <div class="books-post-main">
-  <h2 class="books-post-title">商品の情報を入力</h2>
-  <%= form_with url: books_path, local: true do |f| %>
+  <h1 class="books-post-title">読んだ本の情報を入力</h1>
+  <%= form_with model: @book_plan, url: books_path, local: true do |f| %>
 
-  <%# render 'shared/error_messages', url: books_path, model: f.object %>
+  <%= render 'shared/error_messages', model: @book_plan %>
 
+  <%# 投稿した本の説明%>
   <div class="new-books">
-    <div class="weight-bold-text">
-      タイトル名
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.text_area :title, class:"books-text", id:"book-title", placeholder:"本のタイトル"%>
-    <div class="weight-bold-text">
-      本のジャンル
-        <span class="indispensable">必須</span>
-    </div>
-    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
-    <div class="books-explain">
-      <div class="weight-bold-text">
-        読んだ本の内容・感想
-        <span class="indispensable">必須</span>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="form-text">
+          タイトル名
+          <span class="indispensable">必須</span>
+        </div>
       </div>
-      <%= f.text_area :explanation, class:"books-text", id:"book-info", placeholder:"本の内容や感想を自由にお書きください（必須）"%>
+    </div>
+    <%= f.text_area :title, class:"input-default", id:"book-title", placeholder:"本のタイトル"%>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="form-text">
+          本のジャンル
+          <span class="indispensable">必須</span>
+        </div>
+      </div>
+    </div>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select-box", id:"book-genre"}) %>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="form-text">
+          読んだ本の内容・感想
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explanation, class:"input-default", id:"book-info", placeholder:"本の内容や感想を自由にお書きください（必須）"%>
+      </div>
     </div>
   </div>
 
-  <div class="action-plan-list">
+  <h1 class="plans-post-title">アクションプランを入力</h1>
+  <div class="new-plan">
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">本を読んで、実行してみたい"こと"についてご記入ください。</label>
@@ -66,10 +78,10 @@
     </div>
 
     <div class="form-group">
-      <div class='formtext-wrap'>
+      <div class='form-text-wrap'>
         <label class="form-text">アクションプランの進捗はいかがですか？</label>
       </div>
-      <%= f.collection_select(:achivement_id, Achivement.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
+      <%= f.collection_select(:achievement_id, Achievement.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
   </div>
   <div class="pass-btn-contents">
     <%= f.submit "投稿する" , class:"pass-btn" %>
