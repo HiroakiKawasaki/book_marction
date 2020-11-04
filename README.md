@@ -61,14 +61,16 @@ Things you may want to cover:
 
 ## plans テーブル
 
-| Column         | Type    | Options     |
-| -------------- | ------- | ----------- |
-| when           | string  |             |
-| where          | string  |             |
-| whom           | string  |             |
-| what           | string  |             |
-| how            | string  | null: false |
-| achievement_id | integer |             |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| reason         | string     | null: false                    |
+| time           | string     |                                |
+| place          | string     |                                |
+| partner        | string     |                                |
+| thing          | string     | null: false                    |
+| todo           | string     | null: false                    |
+| achievement_id | integer    |                                |
+| book           | references | null: false, foreign_key: true |
 
 ### Association
 
