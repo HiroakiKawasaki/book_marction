@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 2020_11_02_032701) do
     t.string "thing", null: false
     t.string "todo", null: false
     t.integer "achievement_id"
+    t.bigint "book_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_plans_on_book_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -59,4 +61,5 @@ ActiveRecord::Schema.define(version: 2020_11_02_032701) do
   end
 
   add_foreign_key "books", "users"
+  add_foreign_key "plans", "books"
 end
