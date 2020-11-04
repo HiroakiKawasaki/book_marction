@@ -11,19 +11,19 @@ RSpec.describe BookPlan, type: :model do
         expect(@book_plan).to be_valid
       end
       it 'timeが空欄でも投稿できる' do
-        @book_plan.time = ""
+        @book_plan.time = ''
         expect(@book_plan).to be_valid
       end
       it 'placeが空欄でも投稿できる' do
-        @book_plan.place = ""
+        @book_plan.place = ''
         expect(@book_plan).to be_valid
       end
       it 'partnerが空欄でも投稿できる' do
-        @book_plan.partner = ""
+        @book_plan.partner = ''
         expect(@book_plan).to be_valid
       end
       it 'achivement_idが空欄でも投稿できる' do
-        @book_plan.achievement_id = ""
+        @book_plan.achievement_id = ''
         expect(@book_plan).to be_valid
       end
     end
@@ -57,7 +57,7 @@ RSpec.describe BookPlan, type: :model do
       it 'genre_idの値が0だと投稿できない' do
         @book_plan.genre_id = 0
         @book_plan.valid?
-        expect(@book_plan.errors.full_messages).to include("Genre must be greater than 0")
+        expect(@book_plan.errors.full_messages).to include('Genre must be greater than 0')
       end
     end
   end

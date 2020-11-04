@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :book_plan do
-    title           { 'これは本です'}
+    title           { 'これは本です' }
     genre_id        { 1 }
     explanation     { 'これは本です' }
     reason          { '本が読みたい' }
@@ -9,6 +9,6 @@ FactoryBot.define do
     time            { '朝8:00' }
     place           { '自宅' }
     partner         { '友人' }
-    achievement_id  { 1 }  
+    achievement_id  { 1 }
   end
 end
