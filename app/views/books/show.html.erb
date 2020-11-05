@@ -53,4 +53,12 @@
     </tbody>
   </table>
 
+  <% if @book.user_id == current_user %>
+    <%= link_to '投稿した本・アクションプランの編集', edit_book_path(@book.id), method: :get, class: "item-red-btn" %>
+    <p class='or-text'>or</p>
+    <%= link_to '削除', book_path(@book.id), method: :delete, class:'item-destroy' %>
+  <% else %>
+    <%= link_to 'この本の投稿にコメントをする', "#", class:"item-red-btn"%>
+  <% end %>
+
 <%= render "shared/footer" %>
