@@ -3,7 +3,8 @@ class Book < ApplicationRecord
 
   belongs_to :users, optional: true
   has_many :comments
-  belongs_to_active_hash :genre, :achievement
+  belongs_to_active_hash :genre
+  belongs_to_active_hash :achievement
 
   with_options presence: true do
     validates :title

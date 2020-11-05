@@ -1,8 +1,8 @@
 <div class="books-post-main">
   <h1 class="books-post-title">読んだ本の情報を入力</h1>
-  <%= form_with model: @book_plan, url: books_path, local: true do |f| %>
+  <%= form_with model: @book, url: books_path, local: true do |f| %>
 
-  <%= render 'shared/error_messages', model: @book_plan %>
+  <%= render 'shared/error_messages', model: @book %>
 
   <%# 投稿した本の説明%>
   <div class="new-books">
@@ -15,6 +15,15 @@
       </div>
     </div>
     <%= f.text_area :title, class:"input-default", id:"book-title", placeholder:"本のタイトル"%>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <div class="form-text">
+          著者
+          <span class="indispensable">必須</span>
+        </div>
+      </div>
+    </div>
+    <%= f.text_area :author, class:"input-default", id:"book-title", placeholder:"著者・筆者"%>
     <div class="form-group">
       <div class='form-text-wrap'>
         <div class="form-text">
