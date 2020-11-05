@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+  <div class='book-show'>
+    <div class='book-box'>
+      <h2 class='title'>
+        <%= @book.title%>
+      </h2>
+      <div class='book-genre-box'>
+       <%= @book.genre.name%>
+      </div>
+      <div class='book-explanation-box'>
+        <%= @book.explanation%>
+      </div>
+    </div>
+  </div>
+
+  
+
+<%= render "shared/footer" %>
