@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_book, only: :show
+
   def index
     @books = Book.all.order('created_at DESC')
   end
@@ -15,6 +18,13 @@ class BooksController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+  end
+
+  def set_book
+    @book = Book.find(params[:id])
   end
 
   private
