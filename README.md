@@ -68,11 +68,11 @@ Things you may want to cover:
 
 ## comments テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| text   | text       | null: false                    |
-| user   | references | null: false, foreign_key :true |
-| book   | references | null: false, foreign_key: true |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| message   | text       | null: false                    |
+| user      | references | null: false, foreign_key :true |
+| book      | references | null: false, foreign_key: true |
 
 ### Association
 
