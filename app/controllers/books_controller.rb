@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :set_book, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = Book.all.order('created_at DESC')
@@ -31,6 +31,14 @@ class BooksController < ApplicationController
       redirect_to book_path
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    if @book.destroy
+      redirect_to root_path
+    else
+      render 'show'
     end
   end
 
