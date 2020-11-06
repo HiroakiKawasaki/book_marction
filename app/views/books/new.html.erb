@@ -1,4 +1,7 @@
 <div class="books-post-main">
+  <header class="book-header">
+    <%= link_to image_tag('book-marction-icon.jpeg' , size: '222x60'), "/" %>
+  </header>
   <h1 class="books-post-title">読んだ本の情報を入力</h1>
   <%= form_with model: @book, url: books_path, local: true do |f| %>
 
@@ -97,5 +100,11 @@
     <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
   <% end %>
+  <footer class="book-footer">
+    <%= link_to image_tag('book-marction-icon.jpeg' , size: '222x60'), "/" %>
+    <p class="inc">
+      ©︎Book Marction,Inc.
+    </p>
+  </footer>
 </div>
 
