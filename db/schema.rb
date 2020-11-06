@@ -19,9 +19,17 @@ ActiveRecord::Schema.define(version: 2020_11_02_032701) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
+    t.string "author", null: false
     t.integer "genre_id", null: false
     t.text "explanation", null: false
     t.bigint "user_id", null: false
+    t.string "reason", null: false
+    t.string "time"
+    t.string "place"
+    t.string "partner"
+    t.string "thing", null: false
+    t.string "todo", null: false
+    t.integer "achievement_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_books_on_user_id"

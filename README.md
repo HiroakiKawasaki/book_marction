@@ -46,23 +46,13 @@ Things you may want to cover:
 
 ## books テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| title       | string     | null: false                    |
-| genre_id    | integer    | null: false                    |
-| explanation | text       | null: false                    |
-| user        | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :users
-- has_one :plans
-- has_many :comments
-
-## plans テーブル
-
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
+| title          | string     | null: false                    |
+| author         | string     | null: false                    |
+| genre_id       | integer    | null: false                    |
+| explanation    | text       | null: false                    |
+| user           | references | null: false, foreign_key: true |
 | reason         | string     | null: false                    |
 | time           | string     |                                |
 | place          | string     |                                |
@@ -70,11 +60,11 @@ Things you may want to cover:
 | thing          | string     | null: false                    |
 | todo           | string     | null: false                    |
 | achievement_id | integer    |                                |
-| book           | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :books
+- belongs_to :users
+- has_many :comments
 
 ## comments テーブル
 

@@ -6,6 +6,15 @@
   background-color: #d2b48c;
 }
 
+.search-bar-contents {
+  justify-content: space-between;
+}
+
+.book-marction-icon {
+  width: 10vw;
+  margin-right: 10vw;
+}
+
 .lists-login {
   display: flex;
   list-style: none;

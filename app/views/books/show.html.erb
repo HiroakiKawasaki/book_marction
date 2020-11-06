@@ -1,19 +1,66 @@
 <%= render "shared/header" %>
 
-  <div class='book-show'>
-    <div class='book-box'>
-      <h2 class='title'>
-        <%= @book.title%>
-      </h2>
-      <div class='book-genre-box'>
-       <%= @book.genre.name%>
-      </div>
-      <div class='book-explanation-box'>
-        <%= @book.explanation%>
-      </div>
-    </div>
-  </div>
+  <table class='book-show'>
+    <tbody>
+      <tr>
+        <th class='detail-book'>本のタイトル</th>
+        <td class="detail-value"><%= @book.title%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>著者</th>
+        <td class="detail-value"><%= @book.author%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>本のジャンル</th>
+        <td class="detail-value"><%= @book.genre.name%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>本の内容・感想</th>
+        <td class="detail-value"><%= @book.explanation%></td>
+      </tr>
+    </tbody>
+  </table>
+  <table class='plan-show'>
+    <tbody>
+      <tr>
+        <th class='detail-book'>実行したいアクションについて</th>
+        <td class="detail-value"><%= @book.thing%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>具体的なアクションプラン</th>
+        <td class="detail-value"><%= @book.todo%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>アクションプランを考えた理由</th>
+        <td class="detail-value"><%= @book.reason%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>アクションプランを実行する日・時間帯</th>
+        <td class="detail-value"><%= @book.time%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>アクションプランを実行する場所</th>
+        <td class="detail-value"><%= @book.place%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>アクションプランに協力してくれる人</th>
+        <td class="detail-value"><%= @book.partner%></td>
+      </tr>
+      <tr>
+        <th class='detail-book'>アクションプランの達成状況</th>
+        <td class="detail-value"><%= @book.achievement.name%></td>
+      </tr>
+    </tbody>
+  </table>
 
-  
+  <div class='book-reaction'>
+  <% if @book.user_id = current_user %>
+    <%= link_to '投稿した本・アクションプランの編集', edit_book_path(@book.id), method: :get, class: "book-red-btn" %>
+    <p class='or-text'>or</p>
+    <%= link_to '削除', book_path(@book.id), method: :delete, class:'book-destroy' %>
+  <% else %>
+    <%= link_to 'この本の投稿にコメントをする', "#", class:"book-red-btn"%>
+  <% end %>
+  </div>
 
 <%= render "shared/footer" %>
