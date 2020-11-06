@@ -3,7 +3,7 @@
     <%= link_to image_tag('book-marction-icon.jpeg' , size: '222x60'), "/" %>
   </header>
   <h1 class="books-post-title">読んだ本の情報を入力</h1>
-  <%= form_with model: @book, url: books_path, local: true do |f| %>
+  <%= form_with model: @book, local: true do |f| %>
 
   <%= render 'shared/error_messages', model: @book %>
 
@@ -96,7 +96,7 @@
       <%= f.collection_select(:achievement_id, Achievement.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
   </div>
   <div class="pass-btn-contents">
-    <%= f.submit "投稿する" , class:"pass-btn" %>
+    <%= f.submit "変更する" , class:"pass-btn" %>
     <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
   <% end %>
@@ -107,4 +107,3 @@
     </p>
   </footer>
 </div>
-

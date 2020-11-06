@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_book, only: :show
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :set_book, only: [:show, :edit, :update]
 
   def index
     @books = Book.all.order('created_at DESC')
@@ -21,6 +21,17 @@ class BooksController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @book.update(book_params)
+      redirect_to book_path
+    else
+      render 'edit'
+    end
   end
 
   def set_book
