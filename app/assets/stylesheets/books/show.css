@@ -1,0 +1,58 @@
+.book-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.detail-book {
+  width: 20%;
+  background-color: #eee;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value {
+  width: 80%;
+  padding: 20px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
+
+.plan-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.book-reaction{
+  padding: 5vh 5vw;
+}
+.book-red-btn {
+  text-align: center;
+  background-color: #ea352d;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
+.or-text {
+  font-size: 20px;
+}
+
+.book-destroy {
+  background-color: lightgray;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}

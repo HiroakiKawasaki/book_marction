@@ -53,12 +53,14 @@
     </tbody>
   </table>
 
-  <% if @book.user_id == current_user %>
-    <%= link_to '投稿した本・アクションプランの編集', edit_book_path(@book.id), method: :get, class: "item-red-btn" %>
+  <div class='book-reaction'>
+  <% if @book.user_id = current_user %>
+    <%= link_to '投稿した本・アクションプランの編集', edit_book_path(@book.id), method: :get, class: "book-red-btn" %>
     <p class='or-text'>or</p>
-    <%= link_to '削除', book_path(@book.id), method: :delete, class:'item-destroy' %>
+    <%= link_to '削除', book_path(@book.id), method: :delete, class:'book-destroy' %>
   <% else %>
-    <%= link_to 'この本の投稿にコメントをする', "#", class:"item-red-btn"%>
+    <%= link_to 'この本の投稿にコメントをする', "#", class:"book-red-btn"%>
   <% end %>
+  </div>
 
 <%= render "shared/footer" %>
