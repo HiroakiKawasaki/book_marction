@@ -17,5 +17,4 @@ class Book < ApplicationRecord
   end
 
   validates :genre_id, numericality: { greater_than: 0 }
-
 end
