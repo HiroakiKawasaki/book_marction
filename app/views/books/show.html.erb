@@ -68,4 +68,14 @@
     <% end %>
   </div>
 
+  <div class="comments">
+    <h2>コメント一覧</h2>
+    <% @comments.each do |comment| %>
+      <p>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+        <%= comment.message %>
+      </p>
+    <% end %>
+  </div>
+
 <%= render "shared/footer" %>
