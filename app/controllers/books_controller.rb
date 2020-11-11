@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :show, :create, :edit, :update, :destroy]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -21,6 +21,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @book.comments.includes(:user)
   end
 
   def edit

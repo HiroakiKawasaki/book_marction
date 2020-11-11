@@ -1,7 +1,4 @@
 class Comment < ApplicationRecord
-
-  belongs_to :users
-  belongs_to :books
-
-  validates :message, presence: true
+  belongs_to :user
+  belongs_to :book
 end

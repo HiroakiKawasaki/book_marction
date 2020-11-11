@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'books/index'
   devise_for :users
   root to: 'books#index'
+  post '/books/:book_id' => 'comments#create'
 
   resources :users
   resources :books do

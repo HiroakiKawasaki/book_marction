@@ -61,4 +61,11 @@
   <% end %>
   </div>
 
+  <div class='comment-box'>
+    <%= form_with model: [@book,@comment], local: true do |f| %>
+      <%= f.text_area :message, placeholder: "コメントする", rows: "5" %>
+      <%= f.submit "送信する" %>
+    <% end %>
+  </div>
+
 <%= render "shared/footer" %>
