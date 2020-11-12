@@ -1,4 +1,5 @@
 FactoryBot.define do
-  factory :plan do
+  factory :comment do
+    
   end
 end

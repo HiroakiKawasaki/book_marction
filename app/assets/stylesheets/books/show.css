@@ -32,8 +32,14 @@
 }
 
 .book-reaction{
-  padding: 5vh 5vw;
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
 }
+
 .book-red-btn {
   text-align: center;
   background-color: #ea352d;
@@ -55,4 +61,22 @@
   color: black;
   margin: 20px 0px;
   padding: 2vh 10vw;
+}
+
+.comment-box {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.comments {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
 }

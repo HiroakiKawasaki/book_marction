@@ -54,13 +54,28 @@
   </table>
 
   <div class='book-reaction'>
-  <% if @book.user_id = current_user %>
+  <% if @book.user_id == current_user.id %>
     <%= link_to '投稿した本・アクションプランの編集', edit_book_path(@book.id), method: :get, class: "book-red-btn" %>
     <p class='or-text'>or</p>
     <%= link_to '削除', book_path(@book.id), method: :delete, class:'book-destroy' %>
-  <% else %>
-    <%= link_to 'この本の投稿にコメントをする', "#", class:"book-red-btn"%>
   <% end %>
+  </div>
+
+  <div class='comment-box'>
+    <%= form_with model: [@book,@comment], local: true do |f| %>
+      <%= f.text_area :message, placeholder: "コメントする", rows: "5" %>
+      <%= f.submit "送信する" %>
+    <% end %>
+  </div>
+
+  <div class="comments">
+    <h2>コメント一覧</h2>
+    <% @comments.each do |comment| %>
+      <p>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+        <%= comment.message %>
+      </p>
+    <% end %>
   </div>
 
 <%= render "shared/footer" %>
