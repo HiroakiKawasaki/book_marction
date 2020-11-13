@@ -4,7 +4,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 0;
+  padding: 5vh 10px;
+}
+
+.item-box {
+  background-color: #f8f8f8f8;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.book-box {
+
 }
 
 .detail-book {
@@ -20,15 +34,6 @@
   padding: 20px;
   border: 1px solid #dedede;
   font-size: 14px;
-}
-
-.plan-show {
-  background-color: #f8f8f8;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5vh 0;
 }
 
 .book-reaction{
@@ -63,16 +68,19 @@
   padding: 2vh 10vw;
 }
 
-.comment-box {
+.comments {
   background-color: #f8f8f8;
   width: 100vw;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5vh 0;
+  padding: 5vh 20vw;
 }
 
-.comments {
+.comments-index{
+  background-color: #eee;
+}
+
+.comment-box {
   background-color: #f8f8f8;
   width: 100vw;
   display: flex;
