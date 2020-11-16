@@ -1,0 +1,8 @@
+.second-header {
+  width: 100vw;
+  padding: 2vh 5vw;
+  display: flex;
+  background-color: #d2b48c;
+  justify-content: center;
+  align-items: center;
+}
