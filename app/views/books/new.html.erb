@@ -94,15 +94,13 @@
     <%= f.submit "投稿する" , class:"post-red-btn" %>
     <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
-  
+
   <div class='action-progress'>
     <div class="post-form-group">
       <h1 class="progress-title">アクションプランの進捗はいかがですか？</h1>
       <%= f.collection_select(:achievement_id, Achievement.all, :id, :name, {}, {class:"achieve-select-box", id:"item-shipping-fee-status"}) %>
     </div>
   </div>
-
-  
   <% end %>
 </div>
 <%= render "shared/second-footer"%>
