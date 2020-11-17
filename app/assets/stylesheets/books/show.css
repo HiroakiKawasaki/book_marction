@@ -13,10 +13,16 @@
   min-width: 1200px;
   padding: 10vh 10vw;
   display: flex;
-  align-items: center;
   justify-content: space-around;
 }
 
+.book-box {
+  width: 45vw;
+}
+
+.plan-box {
+  width: 45vw;
+}
 .detail-book {
   width: 20%;
   background-color: #eee;
