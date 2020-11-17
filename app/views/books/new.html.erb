@@ -1,110 +1,108 @@
-<div class="books-post-main">
-  <header class="book-header">
-    <%= link_to image_tag('book-marction-icon.jpeg' , size: '222x60'), "/" %>
-  </header>
-  <h1 class="books-post-title">読んだ本の情報を入力</h1>
+<%= render "shared/second-header"%>
+<div class="books-post">
   <%= form_with model: @book, url: books_path, local: true do |f| %>
 
   <%= render 'shared/error_messages', model: @book %>
 
   <%# 投稿した本の説明%>
-  <div class="new-books">
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <div class="form-text">
-          タイトル名
-          <span class="indispensable">必須</span>
+  <div class='books-post-main'>
+    <div class="new-books">
+      <h1 class="books-post-title">読んだ本の情報を入力</h1>
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <div class="post-form-text">
+            タイトル名
+            <span class="indispensable">必須</span>
+          </div>
+        </div>
+      </div>
+      <%= f.text_area :title, class:"post-input-default", id:"book-title", placeholder:"本のタイトル"%>
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <div class="post-form-text">
+            著者
+            <span class="indispensable">必須</span>
+          </div>
+        </div>
+      </div>
+      <%= f.text_area :author, class:"post-input-default", id:"book-title", placeholder:"著者・筆者"%>
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <div class="post-form-text">
+            本のジャンル
+            <span class="indispensable">必須</span>
+          </div>
+        </div>
+      </div>
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select-box", id:"book-genre"}) %>
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <div class="post-form-text">
+            読んだ本の内容・感想
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :explanation, class:"post-input-explanation", id:"book-info", placeholder:"本の内容や感想を自由にお書きください"%>
         </div>
       </div>
     </div>
-    <%= f.text_area :title, class:"input-default", id:"book-title", placeholder:"本のタイトル"%>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <div class="form-text">
-          著者
+
+    <div class="new-plans">
+      <h1 class="plans-post-title">アクションプランを入力</h1>
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <label class="post-form-text">本を読んで、実行してみたい"こと"についてご記入ください。</label>
           <span class="indispensable">必須</span>
         </div>
+        <%= f.text_area :thing, class:"post-input-actionplan", id:"postal-code", placeholder:"例）朝は早起きをする。"%>
       </div>
-    </div>
-    <%= f.text_area :author, class:"input-default", id:"book-title", placeholder:"著者・筆者"%>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <div class="form-text">
-          本のジャンル
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <label class="post-form-text">実行してみたいことを"どのように"行いますか？自由にアクションプランをお書きください。</label>
           <span class="indispensable">必須</span>
         </div>
+        <%= f.text_area :todo, class:"post-input-actionplan", id:"postal-code", placeholder:"例）目が覚めたらカーテンを開ける。友人と朝活を行う。"%>
       </div>
-    </div>
-    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select-box", id:"book-genre"}) %>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <div class="form-text">
-          読んだ本の内容・感想
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <label class="post-form-text">なぜそのように"行動したい！"と思いましたか？</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :explanation, class:"input-default", id:"book-info", placeholder:"本の内容や感想を自由にお書きください（必須）"%>
+        <%= f.text_area :reason, class:"post-input-actionplan", id:"postal-code", placeholder:"例）会社で眠気を強く感じているから。"%>
+      </div>
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <label class="post-form-text">アクションプランは"いつ"行いますか？</label>
+        </div>
+        <%= f.text_field :time, class:"post-input-default", id:"postal-code", placeholder:"例）毎朝・休日も継続する。"%>
+      </div>
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <label class="post-form-text">アクションプランは"どこで"行いますか？</label>
+        </div>
+        <%= f.text_field :place, class:"post-input-default", id:"postal-code", placeholder:"例）自分の部屋、近所のカフェ等"%>
+      </div>
+      <div class="post-form-group">
+        <div class='post-form-text-wrap'>
+          <label class="post-form-text">アクションプランは"誰と"行いますか？</label>
+        </div>
+        <%= f.text_field :partner, class:"post-input-default", id:"postal-code", placeholder:"例）友人"%>
       </div>
     </div>
   </div>
 
-  <h1 class="plans-post-title">アクションプランを入力</h1>
-  <div class="new-plan">
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">本を読んで、実行してみたい"こと"についてご記入ください。</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :thing, class:"input-default", id:"postal-code", placeholder:"例）朝は早起きをする。"%>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">実行してみたいことを"どのように"行いますか？自由にアクションプランをお書きください。</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :todo, class:"input-default", id:"postal-code", placeholder:"例）目が覚めたらカーテンを開ける。友人と朝活を行う。"%>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">なぜそのように"行動したい！"と思いましたか？</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :reason, class:"input-default", id:"postal-code", placeholder:"例）会社で眠気を強く感じているから。"%>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">アクションプランは"いつ"行いますか？</label>
-      </div>
-      <%= f.text_field :time, class:"input-default", id:"postal-code", placeholder:"例）毎朝・休日も継続する。"%>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">アクションプランは"どこで"行いますか？</label>
-      </div>
-      <%= f.text_field :place, class:"input-default", id:"postal-code", placeholder:"例）自分の部屋、近所のカフェ等"%>
-    </div>
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">アクションプランは"誰と"行いますか？</label>
-      </div>
-      <%= f.text_field :partner, class:"input-default", id:"postal-code", placeholder:"例）友人"%>
-    </div>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">アクションプランの進捗はいかがですか？</label>
-      </div>
-      <%= f.collection_select(:achievement_id, Achievement.all, :id, :name, {}, {class:"select-box", id:"item-shipping-fee-status"}) %>
-  </div>
-  <div class="pass-btn-contents">
-    <%= f.submit "投稿する" , class:"pass-btn" %>
+  <div class="register-btn">
+    <%= f.submit "投稿する" , class:"post-red-btn" %>
     <%=link_to 'もどる', root_path, class:"back-btn" %>
   </div>
-  <% end %>
-  <footer class="book-footer">
-    <%= link_to image_tag('book-marction-icon.jpeg' , size: '222x60'), "/" %>
-    <p class="inc">
-      ©︎Book Marction,Inc.
-    </p>
-  </footer>
-</div>
+  
+  <div class='action-progress'>
+    <div class="post-form-group">
+      <h1 class="progress-title">アクションプランの進捗はいかがですか？</h1>
+      <%= f.collection_select(:achievement_id, Achievement.all, :id, :name, {}, {class:"achieve-select-box", id:"item-shipping-fee-status"}) %>
+    </div>
+  </div>
 
+  
+  <% end %>
+</div>
+<%= render "shared/second-footer"%>
