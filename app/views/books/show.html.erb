@@ -1,10 +1,10 @@
 <%= render "shared/header" %>
-
-  <table class='book-show'>
-    <tbody>
+<div class='book-show'>
+  <table class='item-box'>
+    <tbody class='book-box'>
       <tr>
-        <th class='detail-book'>本のタイトル</th>
-        <td class="detail-value"><%= @book.title%></td>
+        <th class='detail-book-title'>本のタイトル</th>
+        <td class="detail-value-title"><%= @book.title%></td>
       </tr>
       <tr>
         <th class='detail-book'>著者</th>
@@ -19,9 +19,8 @@
         <td class="detail-value"><%= @book.explanation%></td>
       </tr>
     </tbody>
-  </table>
-  <table class='plan-show'>
-    <tbody>
+
+    <tbody class='plan-box'>
       <tr>
         <th class='detail-book'>実行したいアクションについて</th>
         <td class="detail-value"><%= @book.thing%></td>
@@ -61,21 +60,23 @@
   <% end %>
   </div>
 
-  <div class='comment-box'>
-    <%= form_with model: [@book,@comment], local: true do |f| %>
-      <%= f.text_area :message, placeholder: "コメントする", rows: "5" %>
-      <%= f.submit "送信する" %>
-    <% end %>
-  </div>
-
   <div class="comments">
-    <h2>コメント一覧</h2>
+    <div class="comments-index">
+    <h2 class='comment-message-title'>コメント一覧</h2>
     <% @comments.each do |comment| %>
-      <p>
-        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+      <p class='comment-message'>
+        <b><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</b>
         <%= comment.message %>
       </p>
     <% end %>
+    </div>
   </div>
 
+  <div class='comment-box'>
+    <%= form_with model: [@book,@comment], local: true do |f| %>
+      <%= f.text_area :message, placeholder: "コメントする", rows: "5" %>
+      <%= f.submit "送信する", class:'post-red-btn'%>
+    <% end %>
+  </div>
+</div>
 <%= render "shared/footer" %>
