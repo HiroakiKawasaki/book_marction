@@ -111,6 +111,16 @@
 
 .comments-index{
   background-color: #eee;
+  padding: 5vh 2vw;
+}
+
+.comment-message-title {
+  font-weight: bold;
+  padding: 1vh 0;
+}
+
+.comment-message {
+  padding: 3vh 1vh;
 }
 
 .comment-box {

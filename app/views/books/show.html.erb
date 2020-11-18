@@ -62,9 +62,9 @@
 
   <div class="comments">
     <div class="comments-index">
-    <h2>コメント一覧</h2>
+    <h2 class='comment-message-title'>コメント一覧</h2>
     <% @comments.each do |comment| %>
-      <p>
+      <p class='comment-message'>
         <b><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</b>
         <%= comment.message %>
       </p>
@@ -75,7 +75,7 @@
   <div class='comment-box'>
     <%= form_with model: [@book,@comment], local: true do |f| %>
       <%= f.text_area :message, placeholder: "コメントする", rows: "5" %>
-      <%= f.submit "送信する" %>
+      <%= f.submit "送信する", class:'post-red-btn'%>
     <% end %>
   </div>
 </div>
