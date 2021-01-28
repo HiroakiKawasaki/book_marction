@@ -1,27 +1,14 @@
-# README
+# Book Marction
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリケーションは読んだ本の学びと、学びを実行するプランをまとめることができるメモアプリです。
 
-Things you may want to cover:
+# Description
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+私たちは読書をすることで様々なことを学習することができます。
+例えば、本の内容から専門的な知識を身に付けることができたり、著者の考え方や表現方法を感じ取ることができます。
+読書は私たちの生活をより豊かにするヒントを与えてくれます。
+しかし、知識は実際に行動に移すことで真価を発揮すると思います。そこで、「本を読んでインプットしたこと」と「実際にアウトプットすること」を見やすく整理するために "Book Marction" を作成しました。
+名前の由来は "Bookmark" と "action" を組み合わせた造語です。
 
 # テーブル設計
 
