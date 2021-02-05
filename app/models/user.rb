@@ -3,9 +3,10 @@ class User < ApplicationRecord
   has_many :books
   has_many :comments
   belongs_to_active_hash :sex
+  has_many :sns_credentials
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   with_options presence: true do
     validates :nickname

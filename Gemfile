@@ -63,3 +63,7 @@ gem 'active_hash'
 gem 'rspec-rails', '~> 4.0.0'
 gem 'factory_bot_rails'
 gem 'pry-rails'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+gem 'omniauth', '~>1.9.1'
